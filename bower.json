@@ -1,9 +1,9 @@
 {
-  "name": "all",
+  "name": "app_dev",
   "authors": [
     "Vittorio <vittorio.cadastro@gmail.com>"
   ],
-  "description": "Testes Mean - MEAN",
+  "description": "Treinamento Mongoose",
   "main": "server.js",
   "license": "MIT",
   "moduleType": [

@@ -18,12 +18,12 @@ angular.module('produtos').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('/produto_view', {
                 url: '/produtos/:produtoId',
-                templateUrl: 'produtos/views/view-produto.client.view.html',
+                templateUrl: 'produtos/views/view-project.client.view.html',
                 controller: 'ProdutosController'
             })
             .state('/produto_edit', {
                 url: '/produtos/:produtoId/edit',
-                templateUrl: 'produtos/views/edit-produto.client.view.html'
+                templateUrl: 'produtos/views/edit-project.client.view.html'
             })
 
     }
@@ -37,8 +37,8 @@ angular.module('produtos').config(['$stateProvider', '$urlRouterProvider',
 //         }).when('/produtos/create', {
 //             templateUrl: '../produtos/views/create-produto.client.view.html'
 //         }).when('/produtos/:produtoId', {
-//             templateUrl: '../produtos/views/view-produto.client.view.html'
+//             templateUrl: '../produtos/views/view-project.client.view.html'
 //         }).when('/produtos/:produtoId/edit', {
-//             templateUrl: '../produtos/views/edit-produto.client.view.html'
+//             templateUrl: '../produtos/views/edit-project.client.view.html'
 //         });
 // }]);

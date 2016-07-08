@@ -19,6 +19,20 @@
                         <li><a href="/#!/articles">List Articles</a></li>
                         <li><a href="/#!/articles/create">Create Article</a></li>
                     {{else}}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Users <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/users">List Users</a></li>
+                                <li><a href="#!/users/create">Create Users</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Projects <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/projects">List Projects</a></li>
+                                <li><a href="#!/projects/create">Create Projects</a></li>
+                            </ul>
+                        </li>
                         <li><a href="/#!/produtos">Produtos</a></li>
                         <li><a href="/#!/produtos/create">Cadastrar Produto</a></li>
                     {{/if}}
@@ -39,7 +53,7 @@
         </div>
     {{/each}}
     {{{body}}}
-    <section class="container">
+    <section>
         <section ui-view></section>
     </section>
 </main>
@@ -64,5 +78,18 @@
 <script src="./produtos/controllers/produtos.client.controller.js"></script>
 <script src="./produtos/services/produtos.client.service.js"></script>
 <script src="./produtos/config/produtos.client.routes.js"></script>
+
+<!-- Scripts Users -->
+<script src="./users/users.client.module.js"></script>
+<script src="./users/controllers/users.client.controller.js"></script>
+<script src="./users/services/users.client.service.js"></script>
+<script src="./users/config/users.client.routes.js"></script>
+
+<!--Scripts Projects-->
+<script src="./projects/projects.client.module.js"></script>
+<script src="./projects/controllers/projects.client.controller.js"></script>
+<script src="./projects/services/projects.client.service.js"></script>
+<script src="./projects/config/projects.client.routes.js"></script>
+
 </body>
 </html>

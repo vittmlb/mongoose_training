@@ -1,0 +1,10 @@
+<section id="list-users" class="container" data-ng-controller="UsersController" data-ng-init="find()">
+    <h1>Users</h1>
+    <ul class="list-group">
+        <li class="list-group-item" data-ng-repeat="user in users">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a data-ng-href="#!/users/{{user._id}}" data-ng-bind="user.name"></a>
+            <br>
+        </li>
+    </ul>
+</section>

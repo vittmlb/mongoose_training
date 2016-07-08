@@ -1,0 +1,25 @@
+<section class="container" data-ng-controller="ProjectsController">
+    <h1>New Project</h1>
+    <form data-ng-submit="create()">
+        <div class="container">
+            <div class="form-group">
+                <label for="inputProjectName">Project Name:</label>
+                <input type="text" id="inputProjectName" class="form-control" data-ng-model="projectName" placeholder="Nome do Projeto" required>
+            </div>
+            <div class="form-group">
+                <label for="inputTasks">Tasks</label>
+                <input type="text" class="form-control" id="inputTasks" data-ng-model="tasks" placeholder="Tasks">
+            </div>
+            <div class="form-group">
+                <label for="inputContributos">Contributos</label>
+                <input type="text" class="form-control" id="inputContributos" data-ng-model="contributors" placeholder="Contributors">
+            </div>
+        </div>
+        <div class="container">
+            <input type="submit" class="btn btn-info pull-right" value="Cadastrar">
+        </div>
+        <div class="container" data-ng-show="error">
+            <strong data-ng-bind="error"></strong>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,9 @@
+<section id="list-projects" class="container" data-ng-controller="ProjectsController" data-ng-init="find()">
+    <h1>Projetos</h1>
+    <ul class="list-group">
+        <li class="list-group-item" data-ng-repeat="project in projects">
+            <i class="fa fa-object-group" aria-hidden="true"></i>
+            <a data-ng-href="#!/projects/{{project._id}}" data-ng-bind="project.projectName"></a>
+        </li>
+    </ul>
+</section>

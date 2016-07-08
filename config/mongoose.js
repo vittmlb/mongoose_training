@@ -27,6 +27,8 @@ module.exports = function() {
     });
 
     require('../app/models/produtos.server.model.js');
+    require('../app/models/users.server.model');
+    require('../app/models/projects.server.model');
     
     return db;
 };

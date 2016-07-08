@@ -1,0 +1,38 @@
+/** Users **/
+.panel-users {
+    border-radius: 0;
+}
+.panel-users p {
+    font-size: 1.1em;
+    color: steelblue;
+}
+.panel-users p span {
+    color: dimgray;
+    padding-bottom: 1px;
+}
+#list-users li i {
+    margin-right: 8px;
+    color: #21393e;
+}
+
+/** Projetos **/
+#list-projects li i{
+    margin-right: 8px;
+    color: #21393e;
+}
+.panel-projects {
+    border-radius: 0;
+}
+.panel-projects p {
+    font-size: 1.1em;
+    color: steelblue;
+}
+.panel-projects p span {
+    color: dimgray;
+    padding-bottom: 1px;
+}
+
+
+.fa-arrow-left {
+    color: dimgray;
+}

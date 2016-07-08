@@ -1,0 +1,27 @@
+<section class="container" data-ng-controller="UsersController" data-ng-init="findOne()">
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#!/users"><i class="fa fa-arrow-left" style="font-size: 2em; margin-right: 8px; cursor: pointer;" aria-hidden="true"></i></a>
+        <h1 style="display: inline-block; margin-right: 20px;">User</h1>
+        <a href="#!/users/{{user._id}}/edit" class="btn btn-warning" style="margin-bottom: 10px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <button class="btn btn-danger" ng-click="delete()" style="margin-bottom: 10px; margin-left: 10px;"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="panel panel-primary panel-users">
+            <div class="panel-heading">
+                User's Info
+            </div>
+            <div class="panel-body">
+                <p>Name: <span>{{user.name}}</span> </p>
+                <p>E-mail: <span>{{user.email}}</span></p>
+                <p>Created On: <span>{{user.createdOn}}</span></p>
+                <p>Modified On: <span>{{user.modifiedOn}}</span></p>
+                <p>Last Login: <span>{{user.lastLogin}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
