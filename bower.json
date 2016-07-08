@@ -1,0 +1,34 @@
+{
+  "name": "all",
+  "authors": [
+    "Vittorio <vittorio.cadastro@gmail.com>"
+  ],
+  "description": "Testes Mean - MEAN",
+  "main": "server.js",
+  "license": "MIT",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.3",
+    "angular-route": "~1.5.3",
+    "angular-resource": "~1.5.3",
+    "angular-bootstrap": "^1.3.3",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "ngToast": "ngtoast#^2.0.0",
+    "angular-animate": "^1.5.5",
+    "angular-ui-router": "^0.3.0"
+  }
+}
