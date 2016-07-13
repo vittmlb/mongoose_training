@@ -1,7 +1,7 @@
 <section class="container" data-ng-controller="UsersController">
-    <h1>New User</h1>
     <form data-ng-submit="create()" novalidate>
         <div class="container">
+            <h1>New User</h1>
             <div class="form-group">
                 <label for="inputName">Name</label>
                 <input type="text" class="form-control" id="inputName" data-ng-model="name" placeholder="Name" required>
@@ -9,6 +9,18 @@
             <div class="form-group">
                 <label for="inputEmail">Email</label>
                 <input type="text" class="form-control" id="inputEmail" data-ng-model="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="text" class="form-control" id="inputPassword" data-ng-model="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="inputIdade">Idade</label>
+                <input type="text" class="form-control" id="inputIdade" data-ng-model="idade" placeholder="Idade">
+            </div>
+            <div class="form-group">
+                <label for="inputSaldo">Saldo</label>
+                <input type="text" class="form-control" id="inputSaldo" data-ng-model="saldo" placeholder="Saldo">
             </div>
             <div class="container">
                 <input type="submit" class="btn btn-info pull-right" value="Cadastrar">

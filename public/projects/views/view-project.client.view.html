@@ -18,9 +18,18 @@
                     <p>Name: <span>{{project.projectName}}</span></p>
                     <p>Created On: <span>{{project.createdOn | date}}</span></p>
                     <p>Modified On: <span>{{project.modifiedOn | date}}</span></p>
-                    <p>Created By: <span>{{project.createdBy | date}}</span></p>
+                    <p>Created By: <span>{{project.createdBy.name}}</span></p>
                     <p>Contributors: <span>{{project.contributors}}</span></p>
-                    <p>Tasks: <span>{{project.tasks}}</span></p>
+                    <p>Tasks:</p>
+                    <div class="well">
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li data-ng-repeat="t in project.tasks">
+                                <p>
+                                    <i class="fa fa-tasks" aria-hidden="true" style="padding-right: 12px; color: dimgray;"></i>{{t.taskName}}
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

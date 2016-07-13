@@ -6,6 +6,12 @@ angular.module('users').config(['$stateProvider', '$urlRouterProvider',
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+            .state('otherwise', {
+                url: '/',
+                templateUrl: 'users/views/login-user.client.view.html',
+                controller: 'UsersController'
+            })
+            .state('login', {})
             .state('user_create', {
                 url: '/users/create',
                 templateUrl: 'users/views/create-user.client.view.html',

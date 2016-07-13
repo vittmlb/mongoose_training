@@ -4,6 +4,7 @@
         <li class="list-group-item" data-ng-repeat="project in projects">
             <i class="fa fa-object-group" aria-hidden="true"></i>
             <a data-ng-href="#!/projects/{{project._id}}" data-ng-bind="project.projectName"></a>
+            <p style="padding-left: 28px; margin-bottom: 0; font-size: .8em;" class="text-muted">User: {{project.createdBy.name}}</p>
         </li>
     </ul>
 </section>

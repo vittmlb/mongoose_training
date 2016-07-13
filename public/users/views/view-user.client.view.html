@@ -17,9 +17,12 @@
             <div class="panel-body">
                 <p>Name: <span>{{user.name}}</span> </p>
                 <p>E-mail: <span>{{user.email}}</span></p>
-                <p>Created On: <span>{{user.createdOn}}</span></p>
-                <p>Modified On: <span>{{user.modifiedOn}}</span></p>
-                <p>Last Login: <span>{{user.lastLogin}}</span></p>
+                <p>Created On: <span>{{user.createdOn | date}}</span></p>
+                <p>Modified On: <span>{{user.modifiedOn | date}}</span></p>
+                <p>Last Login: <span>{{user.lastLogin | date}}</span></p>
+                <p>Password: <span>{{user.password}}</span></p>
+                <p>Idade: <span>{{user.idade}}</span></p>
+                <p>Saldo: <span>{{user.saldo | currency: 'R$ '}}</span></p>
             </div>
         </div>
     </div>

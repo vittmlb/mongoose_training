@@ -4,6 +4,30 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var taskSchema = new Schema({
+    taskName: {
+        type: String,
+        required: 'TaskeName is required'
+    },
+    taskDesc: {
+        type: String,
+        trim: true
+    },
+    createdOn: {
+        type: Date,
+        default: Date.now
+    },
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    },
+    modifiedOn: {
+        type: Date
+    },
+    assignedTo: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    }
+});
+
 var ProjectSchema = new Schema({
     projectName: {
         type: String
@@ -17,14 +41,14 @@ var ProjectSchema = new Schema({
         default: Date.now
     },
     createdBy: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
     contributors: {
-        type: String
+        type: [{
+            type: mongoose.Schema.Types.ObjectId, ref: 'User'
+        }]
     },
-    tasks: {
-        type: String
-    }
+    tasks: [taskSchema]
 });
 
 mongoose.model('Project', ProjectSchema);

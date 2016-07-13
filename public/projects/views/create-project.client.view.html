@@ -1,25 +1,71 @@
 <section class="container" data-ng-controller="ProjectsController">
-    <h1>New Project</h1>
     <form data-ng-submit="create()">
-        <div class="container">
-            <div class="form-group">
-                <label for="inputProjectName">Project Name:</label>
-                <input type="text" id="inputProjectName" class="form-control" data-ng-model="projectName" placeholder="Nome do Projeto" required>
+        <div class="row">
+            <h1>New Project</h1>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="inputProjectName">Project Name:</label>
+                        <input type="text" id="inputProjectName" class="form-control" data-ng-model="projectName" placeholder="Nome do Projeto" required>
+                    </div> <!-- Project Name -->
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputCreatedBy">Created by</label>
+                                <select class="form-control" name="createdBy" id="inputCreatedBy" data-ng-model="createdBy">
+                                    <option data-ng-repeat="user in users" value="{{user._id}}">{{user.name}}</option>
+                                </select>
+                            </div>
+                        </div> <!-- Created By -->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="inputContributors">Contributors</label><span>
+                                <i style="margin-left: 10px; font-size: .8em; color: dimgray" class="fa fa-users" aria-hidden="true"></i></span>
+                                <span class="text-muted" style="font-size: .8em; margin-right: 4px;" data-ng-repeat="c in projContributors">{{c.name}}</span>
+                                <select name="currentContributor" id="inputContributors" class="form-control" data-ng-model="currentContributor">
+                                    <option data-ng-repeat="contrib in users" value="{{contrib}}">{{contrib.name}}</option>
+                                </select>
+                            </div>
+                        </div> <!-- Contributors -->
+                        <div class="col-sm-1">
+                            <a ng-click="pushContributor()"><i style="font-size: 1.1em; color: dimgray; margin-top: 35px; cursor: pointer;" class="fa fa-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div> <!-- Created By & Contributors -->
+
+                    <display-task></display-task>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="inputTaskName">Task Name</label>
+                                <input type="text" class="form-control" id="inputTaskName" data-ng-model="taskName" placeholder="Task Name">
+                            </div> <!-- TaskName -->
+                            <div class="form-group">
+                                <label for="inputTaskDesc">Description</label>
+                                <input type="text" class="form-control" id="inputTaskDesc" data-ng-model="taskDesc" placeholder="Description">
+                            </div> <!-- TaskDesc -->
+                            <div class="form-group">
+                                <label for="inputTaskAssignedTo">Assigned to</label>
+                                <select name="taskAssignedTo" id="inputTaskAssignedTo" class="form-control" data-ng-model="taskAssignedTo">
+                                    <option ng-repeat="user in users" value="{{user._id}}">{{user.name}}</option>
+                                </select>
+                            </div> <!-- TaskAssignedTo -->
+                        </div> <!-- Task's Fields -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <a ng-click="pushTask()" style=""><i style="font-size: 1.2em; color: dimgray; margin-top: 33px; cursor: pointer;" class="fa fa-plus" aria-hidden="true"></i></a>
+                            </div> <!-- Task's add button -->
+                        </div> <!-- Task's add button -->
+                    </div> <!-- Tasks fields -->
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-info pull-right" value="Cadastrar">
+                    </div> <!-- Submit Button -->
+                    <div class="form-group" data-ng-show="error">
+                        <strong data-ng-bind="error"></strong>
+                    </div> <!-- Error Message DIV -->
+                </div>
             </div>
-            <div class="form-group">
-                <label for="inputTasks">Tasks</label>
-                <input type="text" class="form-control" id="inputTasks" data-ng-model="tasks" placeholder="Tasks">
-            </div>
-            <div class="form-group">
-                <label for="inputContributos">Contributos</label>
-                <input type="text" class="form-control" id="inputContributos" data-ng-model="contributors" placeholder="Contributors">
-            </div>
-        </div>
-        <div class="container">
-            <input type="submit" class="btn btn-info pull-right" value="Cadastrar">
-        </div>
-        <div class="container" data-ng-show="error">
-            <strong data-ng-bind="error"></strong>
         </div>
     </form>
 </section>

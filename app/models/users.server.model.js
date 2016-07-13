@@ -12,6 +12,9 @@ var UserSchema = new Schema({
         type: String,
         unique: true
     },
+    password: {
+        type: String
+    },
     createdOn: {
         type: Date,
         default: Date.now
@@ -23,6 +26,14 @@ var UserSchema = new Schema({
     lastLogin: {
         type: Date,
         default: Date.now
+    },
+    saldo: {
+        type: Number,
+        default: 0
+    },
+    idade: {
+        type: Number,
+        default: 0
     }
 });
 

@@ -1,10 +1,31 @@
 <section id="list-users" class="container" data-ng-controller="UsersController" data-ng-init="find()">
-    <h1>Users</h1>
-    <ul class="list-group">
-        <li class="list-group-item" data-ng-repeat="user in users">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <a data-ng-href="#!/users/{{user._id}}" data-ng-bind="user.name"></a>
-            <br>
-        </li>
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h1>Users <span style="font-size: .5em;" class="text-muted">({{users.length}})</span></h1>
+            </div>
+            <div class="col-sm-3">
+                <h4>Saldo Factory: {{saldoFactory | currency: 'R$ '}}</h4>
+            </div>
+            <div class="col-sm-3">
+                <h4>Saldo Service: {{saldoService | currency: 'R$ '}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <button style="margin-bottom: 8px;" class="btn btn-success" ng-click="query()">Busca</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item" data-ng-repeat="user in users">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <a data-ng-href="#!/users/{{user._id}}" data-ng-bind="user.name"></a>
+                <br>
+            </li>
+        </ul>
+    </div>
 </section>

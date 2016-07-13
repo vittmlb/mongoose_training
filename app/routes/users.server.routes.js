@@ -15,6 +15,12 @@ module.exports = function(app) {
         .put(users.update)
         .delete(users.delete);
 
+    app.route('/login/doLogin')
+        .post(users.login);
+
+    app.route('/api/query')
+        .post(users.findByParam);
+
     app.param('userId', users.findById);
     
 };

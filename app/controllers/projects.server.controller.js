@@ -18,7 +18,7 @@ exports.create = function(req, res) {
 };
 
 exports.list = function(req, res) {
-    Projects.find().exec(function (err, projects) {
+    Projects.find().populate('createdBy', 'name email').exec(function (err, projects) {
         if(err) {
             return res.status(400).send({
                 message: err
@@ -34,7 +34,7 @@ exports.read = function(req, res) {
 };
 
 exports.findById = function(req, res, next, id) {
-    Projects.findById(id).exec(function (err, project) {
+    Projects.findById(id).populate('createdBy', 'name email').populate('contributors', 'name email -_id').exec(function (err, project) {
         if(err) return next(err);
         if(!project) return next(new Error(`Failed to load project id: ${id}`));
         req.project = project;
@@ -45,6 +45,7 @@ exports.findById = function(req, res, next, id) {
 exports.update = function(req, res) {
     var project = req.project;
     project.projectName = req.body.projectName;
+    project.createdBy = req.body.createdBy;
     project.contributors = req.body.contributors;
     project.tasks = req.body.tasks;
     project.save(function (err) {

@@ -1,12 +1,18 @@
 /**
  * Created by Vittorio on 07/07/2016.
  */
-angular.module('users').controller('UsersController', ['$scope', '$stateParams', '$location', 'Users', '$state',
-    function($scope, $stateParams, $location, Users, $state) {
+angular.module('users').controller('UsersController', ['$scope', '$stateParams', '$location', 'Users', '$state', '$http', 'UsersQuery', 'SaldoFactory', 'SaldoService', 'UsersLogin',
+    function($scope, $stateParams, $location, Users, $state, $http, UsersQuery, SaldoFactory, SaldoService, UsersLogin) {
+        $scope.saldoFactory = SaldoFactory.calculaSaldo().saldo;
+        $scope.saldoService = SaldoService.calculaSaldo().saldo;
+        // $scope.saldoProvider = SaldoProvider.saldo;
         $scope.create = function() {
             var user = new Users({
                 name: this.name,
-                email: this.email
+                email: this.email,
+                password: this.password,
+                idade: this.idade,
+                saldo: this.saldo
             });
             user.$save(function (response) {
                 $location.path('/users/' + response._id);
@@ -43,6 +49,18 @@ angular.module('users').controller('UsersController', ['$scope', '$stateParams',
                     $location.path('/users');
                 });
             }
+        };
+        $scope.login = function() {
+            var user = {
+                email: this.email,
+                password: this.password
+            };
+            UsersLogin.login(user).success(function(response) {
+                $location.path('/users/' + response._id);
+            });
+        };
+        $scope.query = function() {
+            
         };
     }
 ]);
